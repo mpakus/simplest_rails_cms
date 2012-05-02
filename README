@@ -1,0 +1,62 @@
+﻿> rails new newcms
+
+в Gemfile пропишем
+gem 'rails_admin'
+gem 'ckeditor', :git => 'git://github.com/galetahub/ckeditor.git'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'devise'
+
+> rails g model page title:string page:string content:text
+
+> rails g devise:install
+> rails g devise User
+
+> rake db:migrate
+
+> rails generate ckeditor:install --orm=active_record --backend=carrierwave
+> rake db:migrate
+
+> rails g rails_admin:install
+> rake db:migrate
+
+> rm public/index.html
+
+> rails s
+
+ В файл конфига config/initializers/rails_admin.rb
+RailsAdmin.config do |config|
+
+  config.current_user_method { current_user }
+
+  config.model Page do
+	include_all_fields
+  	field :content, :text do
+  		ckeditor true
+  	end
+  end
+end
+
+> rails g controller page show
+
+добавить в метод
+  	@page = Page.find_by_page( params[:page] )
+
+изменить вьюшку
+views/page/show.html.erb
+<h1><%= @page.title %></h1>
+<div>
+    <%= raw @page.content %>
+</div>
+
+в файл роутов config/routes.rb добавить
+
+get 'page/:page' => 'page#show', :as => :page
+
+> rails s
+
+localhost:3000/admin
+
+заводим нового пользователя, создаем например в Page страницу с  page: hello
+
+теперь смотрим её на localhost:3000/page/hello

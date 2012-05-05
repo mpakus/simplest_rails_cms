@@ -7,6 +7,7 @@ Newcms::Application.routes.draw do
 
   devise_for :users
 
+  get 'page/index' => 'page#index', :as => :page_list
   get 'page/:page' => 'page#show', :as => :page
 
   # The priority is based upon order of creation:

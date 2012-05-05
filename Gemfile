@@ -11,7 +11,10 @@ gem 'ckeditor', :git => 'git://github.com/galetahub/ckeditor.git'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
-#gem 'mime-types'
+gem 'kaminari'
+
+gem 'acts-as-taggable-on', '~> 2.2.2'
+#gem 'rails_admin_tag_list', :git => 'https://github.com/kryzhovnik/rails_admin_tag_list.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

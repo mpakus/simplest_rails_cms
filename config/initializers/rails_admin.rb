@@ -7,5 +7,8 @@ RailsAdmin.config do |config|
   	field :content, :text do
   		ckeditor true
   	end
+  	field :tag_list do
+       label "Tags"
+    end
   end
 end

@@ -1,4 +1,5 @@
 class PageController < ApplicationController
+  load_and_authorize_resource
 
   def show
   	@page = Page.find_by_page params[:page]

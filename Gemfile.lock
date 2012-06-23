@@ -43,6 +43,7 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.0.2)
     builder (3.0.0)
+    cancan (1.6.7)
     carrierwave (0.6.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -157,6 +158,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 2.2.2)
+  cancan
   carrierwave
   ckeditor!
   coffee-rails (~> 3.2.1)

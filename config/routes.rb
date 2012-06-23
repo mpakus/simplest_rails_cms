@@ -1,11 +1,13 @@
 Newcms::Application.routes.draw do
-  get "page/show"
+  # get "page/show"
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users
+
+  root :to => 'page#index'
 
   get 'page/index' => 'page#index', :as => :page_list
   get 'page/:page' => 'page#show', :as => :page
@@ -22,7 +24,7 @@ Newcms::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  #   resources :productsn
 
   # Sample resource route with options:
   #   resources :products do

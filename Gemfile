@@ -12,6 +12,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
 gem 'kaminari'
+gem 'cancan'
 
 gem 'acts-as-taggable-on', '~> 2.2.2'
 #gem 'rails_admin_tag_list', :git => 'https://github.com/kryzhovnik/rails_admin_tag_list.git'
